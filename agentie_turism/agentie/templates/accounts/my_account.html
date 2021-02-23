@@ -1,0 +1,46 @@
+{%extends "base.html"%}
+
+
+{%block content%}
+<head>
+    <meta charset="UTF-8">
+          {% load static %}
+         <link rel="stylesheet" href="{% static '/my_account.css' %}">
+    <title>Title</title>
+
+
+</head>
+<body>
+    <div class="navbar">
+        <a class="navbar-button" href="{%url 'index'%}">Home</a>
+
+    </div>
+
+
+{%for p,d,h in Data_sheet%}
+    <div class = "travels">
+        <h6> Calatoriile mele </h6>
+
+            <p> Tip Pachet: {{p.0}}</p>
+            <p> Perioada : {{p.2}} - {{p.3}}</p>
+            <p> Destinatie: {{d.1}}</p>
+            <p> Oras: {{d.2}}</p>
+             <p> Hotel: {{h}}</p>
+
+
+    </div>
+
+
+{%endfor%}
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+{%endblock%}

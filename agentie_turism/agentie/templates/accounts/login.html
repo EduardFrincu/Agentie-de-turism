@@ -1,0 +1,63 @@
+{%extends "base.html"%}
+
+
+{%block content%}
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    {% load static %}
+         <link rel="stylesheet" href="{% static '/register.css' %}">
+
+
+    <title>Register</title>
+</head>
+<body>
+
+<
+
+
+
+
+
+
+
+
+
+
+    <div class = "register_form">
+        <form method = "POST" action = "">
+            {%csrf_token%}
+            <div class = "input-group">
+
+                <div class = "input-group-append">
+                    <span class = "input-group-text">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </div>
+
+                <input type = "text" placeholder="Utilizator" name = "username" > <br>
+            </div>
+
+
+            <div class = "input-group">
+
+                <div class = "input-group-append">
+                    <span class = "input-group-text">
+                        <i class="fas fa-key"></i>
+                    </span>
+                </div>
+
+                <input type = "password" placeholder="Parola.." name = "password" > <br>
+            </div>
+
+            <button name ="submit" type="submit"> Login </button>
+            {%for message in messages %}
+                <p>{{message}}</p>
+            {%endfor%}
+
+            <p>Don't have an account?  <a href = "{%url 'register'%}"> Register</a> </p>
+        </form>
+    </div>
+</body>
+</html>
+{%endblock%}

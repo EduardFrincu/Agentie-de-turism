@@ -1,0 +1,134 @@
+{%extends "base.html"%}
+
+
+{%block content%}
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+      {% load static %}
+         <link rel="stylesheet" href="{% static '/index.css' %}">
+
+</head>
+<body>
+
+
+        <div class="navbar">
+
+
+          <div class="dropdown">
+            <button class="dropbtn">Pachete turistice</button>
+
+            <div class="dropdown-content">
+
+              <div class="row">
+                <div class="column">
+                  {%for pack in Packs|slice:":3"%}
+                    <form>
+                        <input type="hidden" name="tip_pachet" value="{{pack.TipPacket}}">
+                         <a href="destinations" type="submit">{{pack.Tip_Pachet}}</a>
+
+                    </form>
+
+                  {%endfor%}
+                </div>
+
+
+                <div class="column">
+                {%for pack in Packs|slice:"3:"%}
+                  <form>
+                      {%csrf_token%}
+                      {{Hidden_form}}
+                         <a href="destinations" type="submit" value="{{pack.TipPacket}}">{{pack.Tip_Pachet}}</a>
+
+                    </form>
+
+
+
+                  {%endfor%}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn">Vacante</button>
+
+            <div class="dropdown-content">
+
+              <div class="row">
+
+
+                {%for p in Places_list%}
+                  <div class = "column">
+                    <h4 style="color:#003366"> Vacante {{p}}</h4>
+
+                      {%for t in Towns%}
+                        {%if t.Nume_Destinatie == p %}
+                            <a href="#">{{t.Oras}}</a>
+                        {%endif%}
+                      {%endfor%}
+                  </div>
+                {%endfor%}
+
+              </div>
+            </div>
+          </div>
+
+
+          {%if request.user.is_authenticated == False %}
+
+          <div class = "account-buttons">
+              <button class="dropbutton">Cont</button>
+
+              <div class="dropdown-content-buttons">
+                     <a class="user" href="login/">Log In</a> <br>
+                     <a class="user" href="register/">Register</a>
+              </div>
+            </div>
+
+
+          {%endif%}
+
+          {%if request.user.is_authenticated == True %}
+            <div class = "account-buttons">
+
+              <button class="dropbutton">
+                <span class = "input-group-text">
+                        <i class="fas fa-user"></i>
+                  </span>
+
+                {{request.user}}</button>
+
+              <div class="dropdown-content-buttons">
+                <a class = "user"  href = "{%url 'logout'%}"> Logout</a>
+                <a class = "user"  href = "{%url 'my_account'%}"> cont</a>
+
+
+              </div>
+            </div>
+
+
+<!--          <a class = "user"  href = "{%url 'logout'%}"> Logout</a>-->
+          {%endif%}
+
+        </div>
+
+
+        <div class = "form">
+
+          <form class = "form_content" action="destinations/" method="POST">
+            <p> Planifica-ti calatoria </p>
+              {%csrf_token%}
+              {{form}}
+              <button name ="submit" type="submit"> Afiseaza </button>
+          </form>
+        </div>
+
+
+
+</body>
+{%endblock%}

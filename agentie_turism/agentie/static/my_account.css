@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+    margin: 0;
+
+
+}
+html{
+  height: 100%;
+  width: 100%;
+}
+body {
+    height: 100%;
+    width: 100%;
+    background-image: url("img/index.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color:whitesmoke;
+    margin: 0;
+
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    width: 100%;
+
+}
+
+.navbar-button{
+
+    color: white;
+    float: right;
+    text-align:center;
+    padding: 17px 24px;
+    text-decoration: none;
+    border-radius:2px;
+    background-color: #003366;
+}
+.navbar-button:hover{
+    background-color: #3875d7 ;
+
+
+}
+.travels{
+      background-color: #003366;
+    width: 30%;
+    margin-left: 13%;
+    float: left;
+    height: 20%;
+    margin-top: 5%;
+    border-radius: 9px;
+    padding-bottom: 2%;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
+.travels h6{
+    color: white;
+    text-align: center;
+    padding: 13px;
+}
+.travels p{
+    color: white;
+    padding: 13px;
+}
+
+.personal_data{
+    background-color: beige;
+    width: 30%;
+    margin-right: 9%;
+    float: right;
+    height: 20%;
+    margin-top: 5%;
+    border-radius: 9px;
+    padding-bottom: 37%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+
+}
+.personal_data p{
+    color: black;
+    text-align: center;
+}

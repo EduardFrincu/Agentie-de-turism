@@ -1,0 +1,45 @@
+{%extends "base.html"%}
+
+
+{%block content%}
+<head>
+
+    {% load static %}
+         <link rel="stylesheet" href="{% static '/destinations.css' %}">
+
+</head>
+<body>
+
+    {%for place in Places%}
+    <div class = "hotel">
+        <p> {{place.Nume_Hotel}}</p>
+        <p>{{place.Destinatie}}</p>
+        <div class = "photo"> </div>
+
+        <div class = "see_more">
+
+                <button>Rezerva</button>
+
+
+        </div>
+
+    </div>
+
+
+    {%endfor%}
+
+    {%if not form_completed %}
+       <p>{{value}} ok</p>
+        <div class = "hotel">
+            <div class = "see_more">
+                <button> Vezi mai mult</button>
+
+            </div>
+        </div>
+    {%endif%}
+
+
+
+</body>
+</html>
+{%endblock%}

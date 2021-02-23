@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+body{
+    background-color: #0d3b27;
+}
+.register_form{
+    background-color: #cccccc;
+    border-radius: 10px;
+    text-align: -webkit-center;
+    margin-top: 3%;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 3% 1% 1%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.register_form input{
+    outline: 0;
+    background: #f2f2f2;
+    width: 91%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 4%;
+    box-sizing: border-box;
+    font-size: 17px;
+    border-radius: 0px 14px 14px 0px;
+}
+.register_form button{
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 17px 18%;
+    background-color: #ff821c;
+    border-radius: 15px;
+    margin-top: 2%;
+}
+.register_form button:hover{
+    background-color: #a35210;
+}
+.input-group-text {
+    background: #ff821c;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 14px 0 0 14px !important;
+    margin: 0 0 15px;
+
+}

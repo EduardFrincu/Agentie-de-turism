@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+}
+body {
+    background-color: #0d3b27;
+
+}
+
+.hotel{
+    background: linear-gradient(180deg, #cccccc 85%, #888888 60%);
+
+    width: 40%;
+    margin-left: 30%;
+    height: 500px;
+    border-radius: 23px;
+    margin-bottom: 4%;
+    padding: 26px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.see_more{
+    margin: 0 auto;
+    text-align: right;
+    margin-top: 345px;
+}
+.see_more button{
+
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 16px 16px;
+    background-color: #003366;
+    font: inherit;
+    border-radius: 21px;
+
+}
+.see_more button:hover{
+    background-color: #3875d7;
+}
+.photo{
+    content:url("img/hotel.jpg");
+    height: 313px;
+    float:right;
+}
